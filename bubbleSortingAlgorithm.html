@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Bubble Sort Algorithm</title>
+</head>
+<h1>Bubble Sort</h1>
+<script type="text/javascript">
+    class BubbleSort {
+        static sort(array) {
+            for (var i = 0; i < array.length - 1; i++) {
+                for (var j = 0; j < array.length - i - 1; j++) {
+                    //swap
+                    if (array[j] > array[j + 1]) {
+                        var flag = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = flag;
+                    }
+                }
+                document.write(array + " <br>");
+            }
+        }
+    }
+
+</script>
+<h2>Testing Bubble Sort Algorithm</h2>
+<h3>Unsorted List</h3>
+<p>60, 50, 95, 80, 70</p>
+<script>
+    /***** testing *****/
+
+    var scores = [60, 50, 95, 80, 70];
+
+    document.write("<h3>Bubble Sorting Process</h3>");
+    document.write('<p>');
+    BubbleSort.sort(scores);
+    document.write('</p>');
+
+    document.write("<br>");
+    document.write("<h3>Sorted List </h3>");
+
+    document.write('<p>');
+    for (var i = 0; i < scores.length; i++) {
+        document.write(scores[i] + ", ");
+    }
+    document.write('</p>');
+
+
+</script>
+
+
+</html>
