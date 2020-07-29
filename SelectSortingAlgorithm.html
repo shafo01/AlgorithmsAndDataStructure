@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    Select Sort
+</head>
+
+<body>
+    <h1> Selection Sort</h1>
+
+    <script type="text/javascript">
+        class SelectSort {
+            static sort(array) {
+                var len = array.length - 1;
+                var minIndex; //Save the index of the selected minimum
+
+                for (var i = 0; i < len; i++) {
+                    minIndex = i;
+                    //Save the minimum value of each loop as the first element
+                    var minValue = array[minIndex];
+
+                    for (var j = i; j < len; j++) {
+                        if (minValue > array[j + 1]) {
+                            minValue = array[j + 1];
+                            minIndex = j + 1;
+                        }
+                    }
+
+                    //if minimum index changes, current minimum is exchanged with the minIndex
+                    if (i !== minIndex) {
+                        var temp = array[i];
+                        array[i] = array[minIndex];
+                        array[minIndex] = temp;
+                    }
+
+                    document.write(array + " <br>");
+                }
+            }
+        }
+    </script>
+
+    <h2>Testing Select Sort Algorithm</h2>
+    <h3>Unsorted List</h3>
+    <p>90, 70, 50, 80, 60, 85</p>
+
+
+    <script type="text/javascript">
+        var scores = [90, 70, 50, 80, 60, 85];
+        document.write("<h3>Select Sorting Process</h3>");
+        document.write('<p>');
+        SelectSort.sort(scores);
+
+        document.write('</p>');
+        document.write("<br>");
+        document.write("<h3>Sorted List </h3>");
+
+        //Printing the list
+        document.write('<p>');
+        for (var i = 0; i < scores.length; i++) { document.write(scores[i] + ", "); } document.write('</p>');
+
+    </script>
+</body>
+
+</html>
